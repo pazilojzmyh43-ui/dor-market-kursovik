@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="64" viewBox="0 0 220 64">
+  <rect width="220" height="64" fill="#2a2622"/>
+  <rect x="8" y="8" width="28" height="48" fill="none" stroke="#c4a46a" stroke-width="2"/>
+  <rect x="14" y="16" width="16" height="10" fill="#c4a46a"/>
+  <circle cx="32" cy="34" r="1.6" fill="#c4a46a"/>
+  <text x="46" y="30" fill="#f4efe6" font-family="Georgia, serif" font-size="18">DoorMarket</text>
+  <text x="46" y="48" fill="#c4a46a" font-family="Georgia, serif" font-size="11">салон дверей</text>
+</svg>

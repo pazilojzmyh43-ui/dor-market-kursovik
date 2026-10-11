@@ -1,0 +1,24 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+<p>Два коротких ролика по теме салона: межкомнатная дверь и входной блок. Формат mp4, длительность меньше минуты.</p>
+
+<div class="video-block">
+    <h3>Межкомнатная дверь в квартире</h3>
+    <video width="640" height="360" controls="controls" poster="/media/poster1.jpg">
+        <source src="/media/video1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+        Тег video не поддерживается вашим браузером
+        <a href="/media/video1.mp4">Скачайте видео</a>
+    </video>
+</div>
+
+<div class="video-block">
+    <h3>Входная дверь загородного дома</h3>
+    <video width="640" height="360" controls="controls" poster="/media/poster2.jpg">
+        <source src="/media/video2.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+        Тег video не поддерживается вашим браузером
+        <a href="/media/video2.mp4">Скачайте видео</a>
+    </video>
+</div>
+{% endblock %}

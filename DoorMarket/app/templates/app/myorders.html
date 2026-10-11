@@ -1,0 +1,32 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+{% if orders %}
+<table class="salon-table">
+    <tr>
+        <th>Номер</th>
+        <th>Дата</th>
+        <th>Статус</th>
+        <th>Сумма</th>
+        <th></th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td><a href="{% url 'myorder' parametr=order.id %}">{{ order.id }}</a></td>
+        <td>{{ order.created }}</td>
+        <td>{{ order.get_status_display }}</td>
+        <td>{{ order.total|floatformat:0 }} ₽</td>
+        <td>
+            <a href="{% url 'myorder' parametr=order.id %}">Открыть</a>
+            {% if order.status == 'new' %}
+            · <a href="{% url 'myorder_delete' parametr=order.id %}">Удалить</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>Заказов пока нет.</p>
+{% endif %}
+{% endblock %}

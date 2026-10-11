@@ -1,0 +1,26 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+<p><a class="btn btn-default" href="{% url 'manager_add' %}">Зарегистрировать менеджера</a></p>
+<table class="salon-table">
+    <tr>
+        <th>Логин</th>
+        <th>Имя</th>
+        <th>Роль</th>
+        <th>Дата регистрации</th>
+        <th></th>
+    </tr>
+    {% for account in accounts %}
+    <tr>
+        <td>{{ account.username }}</td>
+        <td>{{ account.get_full_name }}</td>
+        <td>{% if account.is_staff %}Менеджер{% else %}Клиент{% endif %}</td>
+        <td>{{ account.date_joined }}</td>
+        <td><a href="{% url 'user_delete' parametr=account.id %}">Удалить</a></td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="5">Клиентов и менеджеров нет.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+<p>Выберите категорию. Список моделей этой категории откроется на отдельной странице.</p>
+<div class="row">
+    {% for category in categories %}
+    <div class="col-md-4">
+        <div class="category-card">
+            <h3><a href="{% url 'catalog_items' parametr=category.id %}">{{ category.name }}</a></h3>
+            <p>{{ category.description }}</p>
+            {% if user.is_superuser %}
+            <p>
+                <a href="{% url 'category_edit' parametr=category.id %}">Изменить</a>
+                ·
+                <a href="{% url 'category_delete' parametr=category.id %}">Удалить</a>
+            </p>
+            {% endif %}
+        </div>
+    </div>
+    {% empty %}
+    <p>Категорий пока нет.</p>
+    {% endfor %}
+</div>
+{% endblock %}

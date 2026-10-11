@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="208" height="96" viewBox="0 0 208 96">
+  <rect width="208" height="96" fill="#243024"/>
+  <rect x="12" y="16" width="28" height="64" fill="none" stroke="#d7c39a" stroke-width="2"/>
+  <text x="50" y="44" fill="#f4efe6" font-family="Georgia, serif" font-size="18">Волховец</text>
+  <text x="50" y="66" fill="#d7c39a" font-family="Georgia, serif" font-size="12">межкомнатные</text>
+</svg>

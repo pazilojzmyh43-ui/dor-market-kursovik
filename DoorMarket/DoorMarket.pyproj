@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8F3A1C2E-6B44-4D19-9A70-D00A4E7B0010}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>DoorMarket</Name>
+    <RootNamespace>DoorMarket</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <LaunchProvider>Django</LaunchProvider>
+    <CommandLineArguments>runserver</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <InterpreterId>Global|PythonCore|3.7</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="manage.py" />
+    <Compile Include="DoorMarket\__init__.py" />
+    <Compile Include="DoorMarket\settings.py" />
+    <Compile Include="DoorMarket\urls.py" />
+    <Compile Include="DoorMarket\wsgi.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="app\admin.py" />
+    <Compile Include="app\forms.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\templatetags\__init__.py" />
+    <Compile Include="app\templatetags\staticfiles.py" />
+    <Compile Include="app\management\__init__.py" />
+    <Compile Include="app\management\commands\__init__.py" />
+    <Compile Include="app\management\commands\seed.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="app\migrations\0001_initial.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+    <Content Include="app\templates\app\layout.html" />
+    <Content Include="app\templates\app\loginpartial.html" />
+    <Content Include="app\templates\app\login.html" />
+    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\templates\app\about.html" />
+    <Content Include="app\templates\app\contact.html" />
+    <Content Include="app\templates\app\links.html" />
+    <Content Include="app\templates\app\registration.html" />
+    <Content Include="app\templates\app\blog.html" />
+    <Content Include="app\templates\app\blogpost.html" />
+    <Content Include="app\templates\app\newpost.html" />
+    <Content Include="app\templates\app\videopost.html" />
+    <Content Include="app\templates\app\catalog.html" />
+    <Content Include="app\templates\app\catalog_items.html" />
+    <Content Include="app\templates\app\product.html" />
+    <Content Include="app\templates\app\category_form.html" />
+    <Content Include="app\templates\app\product_form.html" />
+    <Content Include="app\templates\app\cart.html" />
+    <Content Include="app\templates\app\myorders.html" />
+    <Content Include="app\templates\app\myorder.html" />
+    <Content Include="app\templates\app\orders.html" />
+    <Content Include="app\templates\app\order_manage.html" />
+    <Content Include="app\templates\app\users.html" />
+    <Content Include="app\templates\app\manager_add.html" />
+    <Content Include="app\templates\app\confirm_delete.html" />
+    <Content Include="app\static\app\content\site.css" />
+    <Content Include="app\static\app\content\logo.svg" />
+    <Content Include="app\static\app\scripts\jquery-3.5.1.min.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app\" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\app\" />
+    <Folder Include="app\static\app\content\" />
+    <Folder Include="app\static\app\scripts\" />
+    <Folder Include="app\static\app\bootstrap\" />
+    <Folder Include="app\migrations\" />
+    <Folder Include="media\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

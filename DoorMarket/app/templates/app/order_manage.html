@@ -1,0 +1,43 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+<p>Клиент: {{ order.client.username }}{% if order.client.get_full_name %} ({{ order.client.get_full_name }}){% endif %}</p>
+<p>Дата: {{ order.created }}</p>
+{% if order.comment %}<p>Комментарий клиента: {{ order.comment|linebreaksbr }}</p>{% endif %}
+
+<table class="salon-table">
+    <tr>
+        <th>Товар</th>
+        <th>Цена</th>
+        <th>Количество</th>
+        <th>Сумма</th>
+    </tr>
+    {% for line in order.lines.all %}
+    <tr>
+        <td>{{ line.name }}</td>
+        <td>{{ line.price|floatformat:0 }} ₽</td>
+        <td>{{ line.quantity }}</td>
+        <td>{{ line.line_sum|floatformat:0 }} ₽</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <th colspan="3">Итого</th>
+        <th>{{ order.total|floatformat:0 }} ₽</th>
+    </tr>
+</table>
+
+<form method="POST">
+    {% csrf_token %}
+    <p>
+        <label for="id_status">Статус заказа</label>
+        <select id="id_status" name="status">
+            {% for code, label in statuses %}
+            <option value="{{ code }}" {% if order.status == code %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+        </select>
+    </p>
+    <button type="submit" class="btn btn-default">Сохранить статус</button>
+</form>
+<p><a href="{% url 'orders' %}">Ко всем заказам</a></p>
+{% endblock %}

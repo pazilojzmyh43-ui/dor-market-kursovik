@@ -1,0 +1,22 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<h2>{{ category.name }}</h2>
+<p>{{ category.description }}</p>
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-4 product-card">
+        {% if product.image and product.image.url != '/media/temp.jpg' %}
+        <a href="{% url 'catalog_item' parametr=product.id %}">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-responsive" />
+        </a>
+        {% endif %}
+        <h3><a href="{% url 'catalog_item' parametr=product.id %}">{{ product.name }}</a></h3>
+        <p>{{ product.short_description }}</p>
+        <p class="price">{{ product.price|floatformat:0 }} ₽</p>
+    </div>
+    {% empty %}
+    <p>В этой категории пока нет товаров.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            <form action="." method="post" class="form-horizontal">
+                {% csrf_token %}
+                <h4>Вход на сайт салона дверей</h4>
+                <hr />
+                <div class="form-group">
+                    <label for="id_username" class="col-md-2 control-label">Логин</label>
+                    <div class="col-md-10">
+                        {{ form.username }}
+                        {{ form.username.errors }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id_password" class="col-md-2 control-label">Пароль</label>
+                    <div class="col-md-10">
+                        {{ form.password }}
+                        {{ form.password.errors }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="hidden" name="next" value="" />
+                        <button type="submit" class="btn btn-default">Войти</button>
+                    </div>
+                </div>
+                {% if form.non_field_errors %}
+                <div class="text-danger">{{ form.non_field_errors }}</div>
+                {% endif %}
+            </form>
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm">
+            <p>Нет учётной записи? <a href="{% url 'registration' %}">Зарегистрируйтесь</a> — и можно оформлять заказ.</p>
+        </section>
+    </div>
+</div>
+
+{% endblock %}

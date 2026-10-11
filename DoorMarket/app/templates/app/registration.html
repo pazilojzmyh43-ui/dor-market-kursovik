@@ -1,0 +1,32 @@
+{% extends "app/layout.html" %}
+{% block content %}
+    <h2>Регистрация пользователя</h2>
+    <p>После регистрации вы получаете роль клиента и можете собирать корзину.</p>
+    <form id="regForm" method="POST"> {% csrf_token %}
+    <div>
+        {{ regform.as_p }}
+        <button type="submit" class="save btn btn-default">Зарегистрировать</button>
+    </div>
+    </form>
+{% endblock %}
+
+{% block scripts %}
+{% load staticfiles %}
+<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+<script>
+    $(function () {
+        $('#regForm').validate({
+            rules: {
+                username: { required: true, minlength: 3, maxlength: 150 },
+                password1: { required: true, minlength: 8 },
+                password2: { required: true, equalTo: '#id_password1' }
+            },
+            messages: {
+                username: { required: 'Укажите логин' },
+                password1: { required: 'Укажите пароль', minlength: 'Не короче 8 символов' },
+                password2: { required: 'Повторите пароль', equalTo: 'Пароли не совпадают' }
+            }
+        });
+    });
+</script>
+{% endblock %}

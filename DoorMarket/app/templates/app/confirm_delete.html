@@ -1,0 +1,11 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+<p>Удалить «{{ object_name }}»? Это действие нельзя отменить.</p>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-default">Удалить</button>
+    <a class="btn btn-default" href="javascript:history.back()">Отмена</a>
+</form>
+{% endblock %}

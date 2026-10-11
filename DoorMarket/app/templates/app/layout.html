@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="django-doormarket" />
+    <title>{{ title }} — DoorMarket</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <link rel="icon" type="image/svg+xml" href="{% static 'app/content/logo.svg' %}" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand"><img src="{% static 'app/content/logo.svg' %}" alt="logo" /></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                    <li><a href="{% url 'catalog' %}">Каталог</a></li>
+                    <li><a href="{% url 'blog' %}">Новости</a></li>
+                    <li><a href="{% url 'links' %}">Полезные ресурсы</a></li>
+                    <li><a href="{% url 'videopost' %}">Видео</a></li>
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                    <li><a href="{% url 'contact' %}">Контакты</a></li>
+                    {% if user.is_authenticated and not user.is_staff and not user.is_superuser %}
+                    <li><a href="{% url 'cart' %}">Корзина</a></li>
+                    <li><a href="{% url 'myorders' %}">Мои заказы</a></li>
+                    {% endif %}
+                    {% if user.is_staff and not user.is_superuser %}
+                    <li><a href="{% url 'orders' %}">Заказы</a></li>
+                    {% endif %}
+                    {% if not user.is_authenticated %}
+                    <li><a href="{% url 'registration' %}">Регистрация</a></li>
+                    {% endif %}
+                    {% if user.is_superuser %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Администратор <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'newpost' %}">Добавить статью</a></li>
+                            <li><a href="{% url 'category_add' %}">Добавить категорию</a></li>
+                            <li><a href="{% url 'product_add' %}">Добавить товар</a></li>
+                            <li><a href="{% url 'users' %}">Пользователи</a></li>
+                        </ul>
+                    </li>
+                    {% endif %}
+                </ul>
+                {% include 'app/loginpartial.html' %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+        <hr />
+        <footer>
+            <p>&copy; {{ year }} DoorMarket — салон дверей, Псков</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'app/scripts/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'app/bootstrap/js/bootstrap.min.js' %}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+<table class="salon-table">
+    <tr>
+        <th>Номер</th>
+        <th>Клиент</th>
+        <th>Дата</th>
+        <th>Статус</th>
+        <th>Сумма</th>
+        <th></th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <td>{{ order.id }}</td>
+        <td>{{ order.client.username }}</td>
+        <td>{{ order.created }}</td>
+        <td>{{ order.get_status_display }}</td>
+        <td>{{ order.total|floatformat:0 }} ₽</td>
+        <td><a href="{% url 'order_manage' parametr=order.id %}">Управлять</a></td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6">Заказов нет.</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

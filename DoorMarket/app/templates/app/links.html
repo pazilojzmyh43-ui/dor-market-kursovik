@@ -1,0 +1,31 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+<p>Три сайта, по которым удобно сверять конструкции дверей, покрытия и фурнитуру.</p>
+
+<div class="resource">
+    <a href="https://www.volhovec.ru/" target="_blank">
+        <img src="{% static 'app/content/logo-volhovec.svg' %}" alt="logo1" />
+    </a>
+    <h3><a href="https://www.volhovec.ru/" target="_blank">Волховец</a></h3>
+    <p>Фабрика межкомнатных дверей. На сайте есть каталог покрытий и типовые размеры полотен — удобно сравнить с моделями нашего зала.</p>
+</div>
+
+<div class="resource">
+    <a href="https://www.sofya.ru/" target="_blank">
+        <img src="{% static 'app/content/logo-sofya.svg' %}" alt="logo2" />
+    </a>
+    <h3><a href="https://www.sofya.ru/" target="_blank">Софья</a></h3>
+    <p>Коллекции межкомнатных дверей и перегородок. Полезно смотреть, как остекление ведёт себя в узком коридоре.</p>
+</div>
+
+<div class="resource">
+    <a href="https://torex.ru/" target="_blank">
+        <img src="{% static 'app/content/logo-torex.svg' %}" alt="logo3" />
+    </a>
+    <h3><a href="https://torex.ru/" target="_blank">Torex</a></h3>
+    <p>Входные стальные двери. Здесь разбирают толщину листа, контуры уплотнения и терморазрыв — то, что мы проверяем перед заказом блока в дом.</p>
+</div>
+{% endblock %}
