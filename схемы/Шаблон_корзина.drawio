@@ -1,0 +1,17 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="Шаблон_корзина" name="Шаблон_корзина">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="b0" value="Шапка и меню" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="30" y="16" width="460" height="52" as="geometry"/></mxCell>
+        <mxCell id="b1" value="Заголовок «Корзина»" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="30" y="78" width="460" height="44" as="geometry"/></mxCell>
+        <mxCell id="b2" value="Строка: товар, цена, количество, сумма" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="30" y="132" width="460" height="56" as="geometry"/></mxCell>
+        <mxCell id="b3" value="Строка: товар, цена, количество, сумма" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="30" y="198" width="460" height="56" as="geometry"/></mxCell>
+        <mxCell id="b4" value="Итого" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="30" y="264" width="460" height="40" as="geometry"/></mxCell>
+        <mxCell id="b5" value="Комментарий к заказу" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="30" y="314" width="460" height="56" as="geometry"/></mxCell>
+        <mxCell id="b6" value="Кнопка «Оформить заказ»" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="30" y="380" width="460" height="44" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

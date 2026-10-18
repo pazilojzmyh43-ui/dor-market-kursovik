@@ -1,0 +1,23 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="Схема_базы_данных" name="Схема базы данных">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="780" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="user" value="auth_user&#10;id  PK&#10;username&#10;password&#10;email&#10;is_staff&#10;is_superuser" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="360" y="16" width="250" height="160" as="geometry"/></mxCell>
+        <mxCell id="posts" value="Posts&#10;id  PK&#10;title&#10;posted&#10;image&#10;author_id  FK" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="40" y="250" width="250" height="138" as="geometry"/></mxCell>
+        <mxCell id="comm" value="Comments&#10;id  PK&#10;text&#10;date&#10;author_id  FK&#10;post_id  FK" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="360" y="250" width="250" height="138" as="geometry"/></mxCell>
+        <mxCell id="cat" value="Categories&#10;id  PK&#10;name&#10;description" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="40" y="470" width="250" height="94" as="geometry"/></mxCell>
+        <mxCell id="prod" value="Products&#10;id  PK&#10;name&#10;price&#10;image&#10;category_id  FK" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="360" y="450" width="250" height="138" as="geometry"/></mxCell>
+        <mxCell id="ord" value="Orders&#10;id  PK&#10;client_id  FK&#10;created&#10;status&#10;comment" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="700" y="250" width="250" height="138" as="geometry"/></mxCell>
+        <mxCell id="line" value="OrderLines&#10;id  PK&#10;order_id  FK&#10;product_id  FK&#10;name&#10;price&#10;quantity" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;fillColor=#FFFFFF;rounded=0;" vertex="1" parent="1"><mxGeometry x="700" y="470" width="250" height="160" as="geometry"/></mxCell>
+        <mxCell id="e1" value="1 — ∞ автор" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;" edge="1" parent="1" source="user" target="comm"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="1 — ∞" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;" edge="1" parent="1" source="posts" target="comm"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="1 — ∞" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;" edge="1" parent="1" source="user" target="ord"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="1 — ∞" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;" edge="1" parent="1" source="cat" target="prod"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="1 — ∞" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;" edge="1" parent="1" source="ord" target="line"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="1 — ∞" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontFamily=Times New Roman;fontSize=12;strokeColor=#000000;" edge="1" parent="1" source="prod" target="line"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,16 +1,19 @@
 # DoorMarket
 
-Салон дверей. Веб-проект Django для Visual Studio 2019 (шаблон «Веб-проект Django»).
+Салон дверей. Веб-проект Django. Язык и тип проекта заданы пособием: Python, Django, веб-проект Visual Studio. Файл решения открывается в Visual Studio 2022.
 
-## Как открыть
+## Как открыть в Visual Studio 2022
 
-1. Установить Python 3.7 (в лаборатории) или 3.8–3.10 и Django из `DoorMarket/requirements.txt`:
-   `pip install -r DoorMarket/requirements.txt`
-2. Открыть `DoorMarket.sln` в Visual Studio 2019.
-3. В обозревателе решений: проект `DoorMarket`, среда Python 3.7, запуск — Django (`manage.py runserver`).
-4. В каталоге проекта выполнить миграции и заполнение базы, если файла `db.sqlite3` ещё нет:
+1. Установить рабочую нагрузку «Разработка на Python» и Python 3.10 или новее.
+2. Открыть `DoorMarket.sln`.
+3. Если среда пишет, что интерпретатор не найден: проект DoorMarket → Свойства → Общие → Интерпретатор → выбрать установленный Python 3.10+.
+4. В каталоге `DoorMarket` (там лежит `manage.py`):
+   - `pip install -r requirements.txt`
    - `python manage.py migrate`
    - `python manage.py seed`
+5. Запуск — Django (`manage.py runserver`).
+
+В пособии указана Visual Studio 2019. Структура та же: `manage.py`, приложение `app`, поставщик запуска Django. Интерпретатор в файле проекта указан как Python 3.10, а не 3.7: среда 3.7 на новых компьютерах отсутствует и не даёт запустить отладчик.
 
 ## Учётные записи
 
@@ -21,3 +24,8 @@
 | Менеджер | manager | manager123 |
 
 Административный раздел Django: `/admin/`.
+
+## Отчёт и схемы
+
+- `Otchet_kursovoy_DoorMarket.docx` — пояснительная записка. Содержание, номера рисунков и таблиц и ссылки на них — поля Word. В Word: правая кнопка по содержанию → «Обновить поле» → «Обновить целиком».
+- `схемы/` — те же рисунки в формате draw.io (diagrams.net), их можно править.
